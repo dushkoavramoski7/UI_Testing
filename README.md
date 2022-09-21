@@ -1,3 +1,15 @@
+# About the app
+This is a segment of a larger app with main focus on testing the UI with react-testing-library, jest and cypress.
+### Active enpoints
+  <ul>
+  <li>http://localhost:3000/login</li>
+  <li>http://localhost:3000/register</li>
+  <li>http://localhost:3000/brand</li>
+  <li>http://localhost:3000/addBrand</li>
+  <li>http://localhost:3000/addBrand/edit</li>
+  </ul>
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
