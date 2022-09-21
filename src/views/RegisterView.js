@@ -37,6 +37,12 @@ function RegisterView() {
             history.push("/login")
         }
     });
+    const disableRegisterButton = (formik) => {
+         if(formik.values.password === "" || formik.values.username === "" || formik.values.email===""){
+             return true;
+         }
+         else return !!((formik.touched.username && Boolean(formik.errors.username)) || (formik.touched.password && Boolean(formik.errors.password)) || (formik.touched.email && Boolean(formik.errors.email)));
+    }
 
     return (
         <>
@@ -56,6 +62,7 @@ function RegisterView() {
                                        label="Username"
                                        value={formik.values.username}
                                        onChange={formik.handleChange}
+                                       onBlur={formik.handleBlur}
                                        error={formik.touched.username && Boolean(formik.errors.username)}
                                        fullWidth={true}
                                        size={'small'}
@@ -71,6 +78,7 @@ function RegisterView() {
                                        name="email"
                                        className={classes.inputField}
                                        label="Email"
+                                       onBlur={formik.handleBlur}
                                        value={formik.values.email}
                                        onChange={formik.handleChange}
                                        error={formik.touched.email && Boolean(formik.errors.email)}
@@ -89,6 +97,7 @@ function RegisterView() {
                                        name="password"
                                        className={classes.inputField}
                                        label="Password"
+                                       onBlur={formik.handleBlur}
                                        value={formik.values.password}
                                        onChange={formik.handleChange}
                                        error={formik.touched.password && Boolean(formik.errors.password)}
@@ -106,7 +115,7 @@ function RegisterView() {
                             <div className="checkbox i-checks"><label> <input type="checkbox"/><i></i> Agree the terms
                                 and policy </label></div>
                         </div>
-                        <button type="submit" className="btn btn-primary block full-width m-b">Register</button>
+                        <button type="submit" className="btn btn-primary block full-width m-b" disabled={disableRegisterButton(formik)}>Register</button>
 
                         <p className="text-muted text-center"><small>Already have an account?</small></p>
                         <Link to={'/login'} className="btn btn-sm btn-white btn-block">Login</Link>

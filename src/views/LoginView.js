@@ -42,6 +42,13 @@ function LoginView() {
         }
     });
 
+    const disableLoginButton = (formik) => {
+        if(formik.values.password === "" || formik.values.username === ""){
+            return true;
+        }
+        else return !!((formik.touched.username && Boolean(formik.errors.username)) || (formik.touched.password && Boolean(formik.errors.password)));
+    }
+
     return (
         <>
             <div className="loginColumns animated fadeInDown bg-light mt-5" style={{padding: '15px 30px 30px 30px', borderRadius: '15px'}}>
@@ -83,6 +90,7 @@ function LoginView() {
                                                        name="username"
                                                        className={classes.inputField}
                                                        label="Username"
+                                                       onBlur={formik.handleBlur}
                                                        value={formik.values.username}
                                                        onChange={formik.handleChange}
                                                        error={formik.touched.username && Boolean(formik.errors.username)}
@@ -101,6 +109,7 @@ function LoginView() {
                                                        className={classes.inputField}
                                                        label="Password"
                                                        value={formik.values.password}
+                                                       onBlur={formik.handleBlur}
                                                        onChange={formik.handleChange}
                                                        error={formik.touched.password && Boolean(formik.errors.password)}
                                                        fullWidth={true}
@@ -113,7 +122,7 @@ function LoginView() {
                                                     <span className={`${classes.errorText}`}>{formik.errors.password}</span>): null }
                                             </div>
                                         </div>
-                                        <button type="submit" className="btn btn-primary block full-width m-b">Login</button>
+                                        <button type="submit" className="btn btn-primary block full-width m-b" disabled={disableLoginButton(formik)}>Login</button>
 
                                         <a href="#">
                                             <small>Forgot password?</small>
