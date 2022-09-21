@@ -24,7 +24,7 @@ function LoginView() {
 
     useEffect(() => {
         window.scroll(0, 0);
-    })
+    }, [])
 
     const initialValues = {
         username: '',
@@ -44,7 +44,8 @@ function LoginView() {
     return (
         <>
             <div className="loginColumns animated fadeInDown bg-light mt-5" style={{padding: '30px 30px 30px 30px', borderRadius: '15px'}}>
-                {user !== '' ? <div className={'text-center font-weight-bold'} style={{color: 'rgb(26,179,148)'}}>User created, use same credentials to login!</div> : ''}
+                {user !== '' ? <div className={'text-center font-weight-bold p-2'} style={{color: 'rgba(26,179,148)', backgroundColor:'rgba(26,179,148, .2)'}}><i
+                    className="fa fa-check" aria-hidden="true"></i> User created! <br/> Use same credentials to login. </div> : ''}
 
                 <div className="row p-2">
 

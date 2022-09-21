@@ -60,7 +60,7 @@ function BrandView() {
         if(user !== '') {
             setSnackbarMessage({
                 message: 'Welcome!',
-                subMessage: 'Login Successful.',
+                subMessage: 'Login successful.',
                 status: 'success'
             })
             setSnackbarStatus(true)

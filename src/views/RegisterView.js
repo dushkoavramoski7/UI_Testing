@@ -20,7 +20,8 @@ function RegisterView() {
     const dispatch = useDispatch();
     useEffect(() => {
         window.scroll(0, 0);
-    })
+        dispatch(loginActions.userLogin(''));
+    }, [])
     const initialValues = {
         username: '',
         email: '',
