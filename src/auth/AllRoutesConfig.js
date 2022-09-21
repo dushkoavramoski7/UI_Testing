@@ -3,8 +3,22 @@ import BrandView from "../views/BrandView";
 import AddBrandForm from "../views/forms/AddBrandForm";
 import {useEffect} from "react";
 import {loadJS} from "../utils/utils";
+import LoginView from "../views/LoginView";
+import RegisterView from "../views/RegisterView";
 
 export const routesConfig = [
+    {
+        component: LoginView,
+        path: '/login',
+        title: 'Login',
+        exact: true
+    },
+    {
+        component: RegisterView,
+        path: '/register',
+        title: 'Register',
+        exact: true
+    },
     {
         component: BrandView,
         path: '/brands',

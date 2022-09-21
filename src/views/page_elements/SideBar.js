@@ -1,4 +1,5 @@
 import Profile_Image from '../../images/profile_small.jpg'
+import {Link} from "react-router-dom";
 function SideBar() {
     return (
         <nav className="navbar-default navbar-static-side" role="navigation">
@@ -8,15 +9,14 @@ function SideBar() {
                     <div className="dropdown profile-element">
                         {/*<img className="rounded-circle" src={Profile_Image}/>*/}
                         <a data-toggle="dropdown" className="dropdown-toggle" href="#">
-                            <span className="block m-t-xs font-bold">David Williams</span>
-                            <span className="text-muted text-xs block">Art Director <b className="caret"/></span>
+                            <span className="block m-t-xs font-bold">David Williams <b className="caret"/></span>
                         </a>
                         <ul className="dropdown-menu animated fadeInRight m-t-xs">
                             <li><a className="dropdown-item" href="profile.html">Profile</a></li>
                             <li><a className="dropdown-item" href="contacts.html">Contacts</a></li>
                             <li><a className="dropdown-item" href="mailbox.html">Mailbox</a></li>
                             <li className="dropdown-divider"/>
-                            <li><a className="dropdown-item" href="login.html">Logout</a></li>
+                            <li><Link to={'/login'} className="dropdown-item">Logout</Link></li>
                         </ul>
                     </div>
                     <div className="logo-element">
@@ -62,14 +62,6 @@ function SideBar() {
                     </ul>
                 </li>
                 <li>
-                    <a href="metrics.html"><i className="fa fa-pie-chart"></i> <span
-                        className="nav-label">Metrics</span> </a>
-                </li>
-                <li>
-                    <a href="widgets.html"><i className="fa fa-flask"></i> <span
-                        className="nav-label">Widgets</span></a>
-                </li>
-                <li>
                     <a href="#"><i className="fa fa-edit"/> <span className="nav-label">Forms</span><span className="fa arrow"/></a>
                     <ul className="nav nav-second-level collapse">
                         <li><a href="form_basic.html">Basic form</a></li>
@@ -82,8 +74,6 @@ function SideBar() {
                     </ul>
                 </li>
                 <li>
-                    <a href="#"><i className="fa fa-desktop"/> <span className="nav-label">App Views</span> <span
-                        className="float-right label label-primary">SPECIAL</span></a>
                     <ul className="nav nav-second-level collapse">
                         <li><a href="contacts.html">Contacts</a></li>
                         <li><a href="profile.html">Profile</a></li>
@@ -236,10 +226,6 @@ function SideBar() {
                         <li>
                             <a href="#">Second Level Item</a></li>
                     </ul>
-                </li>
-                <li>
-                    <a href="css_animation.html"><i className="fa fa-magic"></i> <span className="nav-label">CSS Animations </span><span
-                        className="label label-info float-right">62</span></a>
                 </li>
                 <li className="landing_link">
                     <a target="_blank" href="landing.html"><i className="fa fa-star"></i> <span className="nav-label">Landing Page</span>

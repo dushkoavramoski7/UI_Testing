@@ -6,16 +6,16 @@ export const theme = createTheme  ({
             "& label.Mui-focused": {
                 color: 'rgb(26,179,148)'
             },
-            // "&:hover label": {
-            //     color: 'rgb(26,179,148)',
-            // },
+            "&:hover label": {
+                color: 'rgb(26,179,148)',
+            },
             "& .MuiOutlinedInput-root": {
                 '& fieldset': {
                     border: '1px solid #E8E8E8',
                 },
-                // "&:hover fieldset": {
-                //     borderColor: `rgb(26,179,148)`,
-                // },
+                "&:hover fieldset": {
+                    borderColor: `rgb(26,179,148)`,
+                },
                 "&.Mui-focused fieldset": {
                     border: '1px solid rgb(26,179,148)',
                 },

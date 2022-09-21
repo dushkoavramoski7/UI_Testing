@@ -25,6 +25,7 @@ import {Box, Button, LinearProgress} from "@mui/material";
 import ModeEditOutlineRoundedIcon from '@mui/icons-material/ModeEditOutlineRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import {Link} from "react-router-dom";
+import {loginActions} from "../redux/action/loginActions";
 
 function BrandView() {
     const classes = useStyles(brandViewStyle);
@@ -32,6 +33,7 @@ function BrandView() {
     const brands = useSelector(state => state.brand.brands);
     const allBrands = useSelector(state => state.brand.allBrands);
     const filterBy = useSelector(state => state.brand.filterBy);
+    const user = useSelector(state => state.login.username);
     const dispatch = useDispatch();
     const [page, setPage] = useState(0);
     const [itemsPerPage, setItemsPerPage] = useState(15);
@@ -54,9 +56,21 @@ function BrandView() {
         dispatch(brandActions.fetchAllBrands());
     }
 
+    const loginSuccess = () => {
+        if(user !== '') {
+            setSnackbarMessage({
+                message: 'Welcome!',
+                subMessage: 'Login Successful.',
+                status: 'success'
+            })
+            setSnackbarStatus(true)
+        }
+    }
     useEffect(() => {
         window.scroll(0,0);
         fetchBrands();
+        loginSuccess();
+        dispatch(loginActions.userLogin(''));
     }, []);
 
     const selectBrand = (brand) => {

@@ -17,3 +17,5 @@ export const FETCH_COMPANIES = "FETCH_COMPANIES";
 export const CHANGE_STATUS_NOTE = "CHANGE_STATUS_NOTE";
 export const DELETE_NOTE = "DELETE_NOTE";
 export const ADD_NOTE = "ADD_NOTE";
+
+export const LOGIN = "LOGIN"

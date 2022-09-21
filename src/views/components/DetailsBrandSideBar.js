@@ -29,7 +29,7 @@ function DetailsBrandSideBar() {
             <div style={{textAlign: 'center'}}> { Object.keys(brand).length === 0 ? <span >No entity found</span> : null }</div>
             <div  style={ Object.keys(brand).length === 0 ? { display: 'none'} : {} }>
                 <div className="tab-pane">
-                    <div className="row m-b-lg">
+                    <div className="row m-b-md">
                         <div className="col-lg-12 text-left">
                             <h2 style={{textAlign: 'justify'}}>{brand.brandName}</h2>
                             <strong>
@@ -44,8 +44,8 @@ function DetailsBrandSideBar() {
                                 WebkitBoxOrient: 'vertical'}}>{brand.brandDescription}</p>
                         </div>
                         <div className="col-lg-12">
-                            <button type="button" className="btn btn-w-m btn-warning float-right"><i
-                                className="fa fa-angle-double-right"/> View
+                            <button type="button" className="btn btn-block btn-w-m btn-warning float-right">
+                                Details
                             </button>
                         </div>
                     </div>

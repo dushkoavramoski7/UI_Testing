@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom";
+
 function TopBar() {
     return (
         <>
@@ -8,7 +10,6 @@ function TopBar() {
                             <i className="fa fa-bars"/> </a>
                         <form role="search" className="navbar-form-custom">
                             <div className="form-group">
-
                                 {/*<input type="text" placeholder="Search for something..." className="form-control"*/}
                                 {/*       name="top-search" id="top-search">*/}
                             </div>
@@ -18,9 +19,9 @@ function TopBar() {
                         <li>
                         </li>
                         <li>
-                            <a href="login.html">
+                            <Link to={'/login'}>
                                 <i className="fa fa-sign-out"/> Log out
-                            </a>
+                            </Link>
                         </li>
                     </ul>
 

@@ -6,7 +6,7 @@ import {IconButton} from "@material-ui/core";
 type TransitionProps = Omit<SlideProps, 'direction'>;
 
 function TransitionRight(props: TransitionProps) {
-    return <Slide {...props} direction="left"/>;
+    return <Slide {...props} direction="down"/>;
 }
 
 function SnackbarAlert({snackbarStatus, closeSnackbar, snackbarMessage}) {
@@ -15,7 +15,7 @@ function SnackbarAlert({snackbarStatus, closeSnackbar, snackbarMessage}) {
             <Snackbar
                 anchorOrigin={{
                     vertical: "top",
-                    horizontal: "right"
+                    horizontal: "center"
                 }}
                 autoHideDuration={snackbarMessage.importFile === true ? 20000 : 6512}
                 open={snackbarStatus}
