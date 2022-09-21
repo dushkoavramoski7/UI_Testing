@@ -44,7 +44,7 @@ function DetailsBrandSideBar() {
                                 WebkitBoxOrient: 'vertical'}}>{brand.brandDescription}</p>
                         </div>
                         <div className="col-lg-12">
-                            <button type="button" className="btn btn-block btn-w-m btn-warning float-right">
+                            <button type="button" className="btn btn-block btn-w-m btn-warning float-right disabled">
                                 Details
                             </button>
                         </div>

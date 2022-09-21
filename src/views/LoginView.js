@@ -43,13 +43,13 @@ function LoginView() {
 
     return (
         <>
-            <div className="loginColumns animated fadeInDown bg-light mt-5" style={{padding: '30px 30px 30px 30px', borderRadius: '15px'}}>
+            <div className="loginColumns animated fadeInDown bg-light mt-5" style={{padding: '15px 30px 30px 30px', borderRadius: '15px'}}>
                 {user !== '' ? <div className={'text-center font-weight-bold p-2'} style={{color: 'rgba(26,179,148)', backgroundColor:'rgba(26,179,148, .2)'}}><i
                     className="fa fa-check" aria-hidden="true"></i> User created! <br/> Use same credentials to login. </div> : ''}
 
-                <div className="row p-2">
+                <div className="row p-2" style={{paddingTop: '0px'}}>
 
-                    <div className="col-md-6">
+                    <div className="col-md-6 text-justify">
                         <h2 className="font-bold">Welcome to 'Sample app'</h2>
 
                         <p>
@@ -64,6 +64,7 @@ function LoginView() {
                         <p>
                             Maecenas sapien orci, efficitur in lectus at, varius aliquam risus. Aenean id eros a sem facilisis sollicitudin quis sed est. Mauris a lectus varius, porttitor mi vel, posuere mauris.
                         </p>
+                        <br/>
 
                         <p>
                             <small>Curabitur tristique magna ut nisl suscipit varius. Morbi eu elementum nulla, eu dapibus ex. Phasellus mattis faucibus turpis quis pharetra.</small>
