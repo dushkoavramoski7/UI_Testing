@@ -19,7 +19,7 @@ function TopBar() {
                         <li>
                         </li>
                         <li>
-                            <Link to={'/login'}>
+                            <Link to={'/logout'}>
                                 <i className="fa fa-sign-out"/> Log out
                             </Link>
                         </li>

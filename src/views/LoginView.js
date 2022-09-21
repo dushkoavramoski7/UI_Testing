@@ -5,7 +5,7 @@ import {useStyles} from "../factory/StyleFactory";
 import {loginViewStyle} from "./style/LoginViewStyle";
 import {useDispatch, useSelector} from "react-redux";
 import {loginActions} from "../redux/action/loginActions";
-import {Link, useHistory} from "react-router-dom";
+import {Link, useHistory, useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import SnackbarAlert from "./components/SnackbarAlert";
 
@@ -18,6 +18,7 @@ function LoginView() {
     const classes = useStyles(loginViewStyle);
     const dispatch = useDispatch();
     const history = useHistory();
+    const id = useParams();
     const user = useSelector(state => state.login.username);
     const [snackbarStatus, setSnackbarStatus] = useState(false);
     const [snackbarMessage, setSnackbarMessage] = useState('');
@@ -46,6 +47,8 @@ function LoginView() {
             <div className="loginColumns animated fadeInDown bg-light mt-5" style={{padding: '15px 30px 30px 30px', borderRadius: '15px'}}>
                 {user !== '' ? <div className={'text-center font-weight-bold p-2'} style={{color: 'rgba(26,179,148)', backgroundColor:'rgba(26,179,148, .2)'}}><i
                     className="fa fa-check" aria-hidden="true"></i> User created! <br/> Use same credentials to login. </div> : ''}
+                {window.location.pathname === '/logout' ? <div className={'text-center font-weight-bold p-2'} style={{color: 'rgba(26,179,148)', backgroundColor:'rgba(26,179,148, .2)'}}><i
+                    className="fa fa-check" aria-hidden="true"></i> You have been successfully logged out. </div> : ''}
 
                 <div className="row p-2" style={{paddingTop: '0px'}}>
 

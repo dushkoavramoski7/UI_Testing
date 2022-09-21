@@ -16,7 +16,7 @@ function SideBar() {
                             <li><a className="dropdown-item" href="contacts.html">Contacts</a></li>
                             <li><a className="dropdown-item" href="mailbox.html">Mailbox</a></li>
                             <li className="dropdown-divider"/>
-                            <li><Link to={'/login'} className="dropdown-item">Logout</Link></li>
+                            <li><Link to={'/logout'} className="dropdown-item">Logout</Link></li>
                         </ul>
                     </div>
                     <div className="logo-element">
