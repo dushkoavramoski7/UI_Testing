@@ -12,6 +12,8 @@ import {brandActions} from "../../redux/action/brandActions";
 import {useDispatch, useSelector} from "react-redux";
 import SnackbarAlert from "../components/SnackbarAlert";
 import LoadingButton from "@mui/lab/LoadingButton";
+import {Button} from "@mui/material";
+import KeyboardArrowDownRoundedIcon from '@mui/icons-material/KeyboardArrowDownRounded';
 
 let lengthInput = 400;
 const validationSchema = yup.object({
@@ -138,6 +140,11 @@ function AddBrandForm() {
                     </div>
                     <BreadCrumbs breadCrumbsItems={breadCrumbsItems} breadCrumbsActive={id === undefined ? 'Add Brand' : 'Edit Brand'}/>
                     <br/>
+                    <div className={'row d-flex justify-content-end'} >
+                        <div className={'col-1 d-flex justify-content-end'}>
+                            <Button color={"success"} sx={{color: 'rgb(26,179,148)', borderColor: 'rgb(26,179,148)', "& :hover": {borderColor: 'rgb(26,179,148)'}}} variant="outlined" size={'small'} onClick={() => window.scroll(0,window.innerHeight)}><KeyboardArrowDownRoundedIcon fontSize={'small'} sx={{color: 'rgb(26,179,148)'}} /></Button>
+                        </div>
+                    </div>
                     <FormikProvider value={formik}>
                         <form onSubmit={formik.handleSubmit}>
                             <div ref={elementRef} className={"mt-1"}>

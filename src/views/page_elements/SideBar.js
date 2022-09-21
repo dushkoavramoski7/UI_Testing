@@ -169,12 +169,12 @@ function SideBar() {
                     <a href="grid_options.html"><i className="fa fa-laptop"></i> <span className="nav-label">Grid options</span></a>
                 </li>
                 <li className="active">
-                    <a href="#"><i className="fa fa-table"></i> <span className="nav-label">Tables</span><span
+                    <a href="#"><i className="fa fa-table"></i> <span className="nav-label">Items</span><span
                         className="fa arrow"></span></a>
                     <ul className="nav nav-second-level">
                         <li><a href="table_basic.html">Static Tables</a></li>
                         <li><a href="table_data_tables.html">Data Tables</a></li>
-                        <li className="active"><a href="table_foo_table.html">Foo Tables</a></li>
+                        <li className="active"><a href="table_foo_table.html">Brand</a></li>
                         <li><a href="jq_grid.html">jqGrid</a></li>
                     </ul>
                 </li>
