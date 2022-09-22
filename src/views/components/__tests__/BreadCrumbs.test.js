@@ -11,7 +11,20 @@ it('renders without crashing', ()=>{
 })
 
 
-test('is brand active working properly', ()=>{
-    render(<BreadCrumbs breadCrumbsItems={[{name: 'Home', href: '/home'}, {name: 'Tables', href: '/tables'}]} breadCrumbsActive={'Home'}/>);
-    expect(screen.getByTestId('activeBrand')).toHaveTextContent("Home");
+test('Is active brand working properly', ()=>{
+    render(<BreadCrumbs breadCrumbsItems={[{name: 'Home', href: '/home'}, {name: 'Tables', href: '/tables'}]} breadCrumbsActive={'Brand'}/>);
+    expect(screen.getByTestId('activeBrand')).toHaveTextContent("Brand");
+})
+
+test('BreadCrumb props works properly', ()=>{
+    render(<BreadCrumbs breadCrumbsItems={[{name: 'Home', href: '/home'}, {name: 'Tables', href: '/tables'}]} breadCrumbsActive={'Brand'}/>);
+    const items = screen.getAllByRole('listitem');
+    const breadCrombsItems = items.map(item => item.textContent)
+    expect(breadCrombsItems).toMatchInlineSnapshot(`
+      Array [
+        "Home",
+        "Tables",
+        "Brand",
+      ]
+    `)
 })
