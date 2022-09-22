@@ -19,7 +19,7 @@ function LoginView() {
     const dispatch = useDispatch();
     const history = useHistory();
     const id = useParams();
-    const user = useSelector(state => state.login.username);
+    const user = useSelector(state => state.login?.username);
     const [snackbarStatus, setSnackbarStatus] = useState(false);
     const [snackbarMessage, setSnackbarMessage] = useState('');
 
@@ -100,7 +100,7 @@ function LoginView() {
                                                        placeholder="Please enter username"/>
                                             <div>
                                                 {formik.touched.username && Boolean(formik.errors.username) ? (
-                                                    <span className={`${classes.errorText}`}>{formik.errors.username}</span>): null }
+                                                    <span data-testid='usernameError' className={`${classes.errorText}`}>{formik.errors.username}</span>): null }
                                             </div>
                                         </div>
                                         <div className="form-group">
