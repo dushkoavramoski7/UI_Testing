@@ -1,8 +1,8 @@
 function BreadCrumbs({breadCrumbsItems, breadCrumbsActive}) {
     return (
-        <div className="row wrapper border-bottom white-bg page-heading">
+        <div data-testid="breadCrumbs" className="row wrapper border-bottom white-bg page-heading">
             <div className="col-lg-10">
-                <h2>{breadCrumbsActive}</h2>
+                <h2 data-testid="breadCrumbActive">{breadCrumbsActive}</h2>
                 <ol className="breadcrumb">
                     {breadCrumbsItems?.map((item) => (
                         <li className="breadcrumb-item" key={item.name}>

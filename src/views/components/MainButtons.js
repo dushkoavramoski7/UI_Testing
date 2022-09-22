@@ -1,4 +1,5 @@
 import {Link} from "react-router-dom";
+import {Router} from "@mui/icons-material";
 
 function MainButtons({openExportModal, openImportModal, addItemLink}) {
     return (
@@ -11,11 +12,13 @@ function MainButtons({openExportModal, openImportModal, addItemLink}) {
                     style={{backgroundColor: '#f3f3f4'}}
                     onClick={() => openImportModal()}> <span style={{color: '#808a90'}}>Import</span>
             </button>
+            <Router>
             <Link
                 to={addItemLink}
                 className="btn btn-primary trigger-btn text-white m-1 m-r-sm btn-lg">
                 <span className={"font-weight-bold"}> <i className="fa fa-sm fa-plus align-self-center"/> NEW </span>
             </Link>
+            </Router>
         </div>
     )
 }
