@@ -4,7 +4,7 @@ function BreadCrumbs({breadCrumbsItems, breadCrumbsActive}) {
             <div className="col-lg-10">
                 <h2>{breadCrumbsActive}</h2>
                 <ol className="breadcrumb">
-                    {breadCrumbsItems.map((item) => (
+                    {breadCrumbsItems?.map((item) => (
                         <li className="breadcrumb-item" key={item.name}>
                             <a href={item.href}>{item.name}</a>
                         </li>
