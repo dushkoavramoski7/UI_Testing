@@ -10,8 +10,8 @@ it('renders without crashing', ()=>{
     ReactDOM.render(<BreadCrumbs></BreadCrumbs>,div)
 })
 
-//
-// test('initial render for component', ()=>{
-//     render(<BreadCrumbs breadCrumbsActive={[{name: 'Home', href: '/home'}, {name: 'Tables', href: '/tables'}]} breadCrumbsItems={'Home'}/>);
-//     screen.getByRole('');
-// })
+
+test('is brand active working properly', ()=>{
+    render(<BreadCrumbs breadCrumbsItems={[{name: 'Home', href: '/home'}, {name: 'Tables', href: '/tables'}]} breadCrumbsActive={'Home'}/>);
+    expect(screen.getByTestId('activeBrand')).toHaveTextContent("Home");
+})

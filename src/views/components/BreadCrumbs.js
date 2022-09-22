@@ -9,7 +9,7 @@ function BreadCrumbs({breadCrumbsItems, breadCrumbsActive}) {
                             <a href={item.href}>{item.name}</a>
                         </li>
                     ))}
-                    <li className="breadcrumb-item active">
+                    <li data-testid='activeBrand' className="breadcrumb-item active">
                         <strong>{breadCrumbsActive}</strong>
                     </li>
                 </ol>
