@@ -68,7 +68,7 @@ function DetailsBrandSideBar() {
                             </p>
 
                             <div >
-                                <a className="btn btn-sm btn-white mb-3" onClick={() => setShowNoteForm(!showNoteForm)}> {!showNoteForm ?
+                                <a className="btn btn-sm btn-white mb-3" onClick={() => setShowNoteForm(!showNoteForm)} data-test={"add-note"}> {!showNoteForm ?
                                             <span> <i className="fa fa-plus"/> Add Note </span> :
                                                  <span> <i className="fa fa-times"/> Close Note </span> }
                                 </a>
@@ -85,15 +85,16 @@ function DetailsBrandSideBar() {
                                             style={{  position: 'relative'}}
                                             id="task1"
                                             key={note.noteId}>
-                                            <div style={{width: '67%'}}>{note?.noteText}</div>
+                                            <div style={{width: '67%'}} data-test={"noteText"}>{note?.noteText}</div>
                                             <span
-                                                className="card-subtitle mb-2 text-muted">Priority: {note.notePriority}
+                                                className="card-subtitle mb-2 text-muted" data-test={"notePriority"}>Priority: {note.notePriority}
                                             </span>
                                             <div className="agile-detail">
                                                  <span
                                                      className={note.noteStatus === 'DONE' ?  "float-right label label-primary" : "float-right label"}
                                                      style={{ position: 'absolute', top: '7px', right: '8px'}}
                                                      onClick={() => changeStatus(note, brand.brandId)}
+                                                     data-test={"noteStatus"}
                                                  >
                                                     {note.formattedNoteStatus}
                                                 </span>
@@ -105,7 +106,7 @@ function DetailsBrandSideBar() {
                                                 </a>
                                                 <i className="fa fa-clock-o"/>
                                                 <span>  </span>
-                                                <span>
+                                                <span data-test={"noteCreatedAt"}>
                                                     {note?.formattedNoteDateCreated}
                                                 </span>
                                             </div>
@@ -120,7 +121,7 @@ function DetailsBrandSideBar() {
                                             style={{  position: 'relative'}}
                                             id="task1"
                                             key={note?.noteId}>
-                                            <div style={{width: '67%'}}>{note?.noteText}</div>
+                                            <div style={{width: '67%'}} data-test={"noteText"}>{note?.noteText}</div>
                                             <span
                                                 className="card-subtitle mb-2 text-muted">Priority: {note?.notePriority}
                                             </span>

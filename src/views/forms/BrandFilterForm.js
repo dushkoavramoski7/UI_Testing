@@ -89,6 +89,7 @@ function BrandFilterForm({setPage, itemsPerPage, setEndOffset, setItemOffset, se
                         <div className="form-group col-6">
                             <label htmlFor="brandName">Brand Name:</label>
                             <SelectSearch
+                                data-test={"brandNamesFilter"}
                                 options={brandNames}
                                 value={formik.values.brandName}
                                 onChange={(e) => handleChangeName(e, formik.values, formik.setValues)}
@@ -143,6 +144,7 @@ function BrandFilterForm({setPage, itemsPerPage, setEndOffset, setItemOffset, se
                         <div className="form-group col-5" style={{marginTop: '30px'}}>
                             <MuiPickersUtilsProvider utils={DateFnsUtils}>
                                 <DatePicker
+                                    data-test={"beforeDate"}
                                     id={"brandDateCreatedAfter"}
                                     renderinput={(props) => <TextField {...props} />}
                                     disableFuture

@@ -21,7 +21,8 @@ function PopoverFilter({openPopoverFilter, setOpenPopoverFilter, popoverBodyComp
                                 </Popover>
                             }>
                   <span className={`input-group-addon ${classes.cursorPointerHover} ${classes.greyHover}`}
-                        style={{borderRight: '0px'}} onClick={() => setOpenPopoverFilter(!openPopoverFilter)}>
+                        style={{borderRight: '0px'}} onClick={() => setOpenPopoverFilter(!openPopoverFilter)}
+                  data-test={"filterButton"}>
                       <IconButton size={'small'} className={`input-group-addon`} style={{padding: 0}}>
                           {!openPopoverFilter ? <ExpandMoreSharpIcon fontSize={'small'}/> : <ExpandLessSharpIcon fontSize={'small'}/>}
                       </IconButton>

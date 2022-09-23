@@ -131,7 +131,7 @@ function AddBrandForm() {
     }
 
     return (
-        <div className="fixed-sidebar no-skin-config full-height-layout">
+        <div className="fixed-sidebar no-skin-config full-height-layout" data-test={"addBrandView"}>
             <div id="wrapper">
                 <SideBar/>
                 <div id="page-wrapper" className="gray-bg">

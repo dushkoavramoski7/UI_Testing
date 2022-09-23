@@ -5,6 +5,7 @@ function MainButtons({openExportModal, openImportModal, addItemLink}) {
         <div className='col-5'>
             <Link
                 to={addItemLink}
+                data-test={"addBrandButton"}
                 className="btn btn-primary trigger-btn text-white m-1 m-r-sm btn-lg float-right">
                 <span className={"font-weight-bold"}> <i className="fa fa-sm fa-plus align-self-center"/> NEW </span>
             </Link>

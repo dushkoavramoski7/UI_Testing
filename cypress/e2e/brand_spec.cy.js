@@ -20,7 +20,7 @@ context('Brand page tests', () => {
 
         //Assert that brand view is shown
         cy.get('[data-test="brandView"]').should("exist")
-        cy.wait(2000)
+        cy.wait(1000)
     })
 
     it('Change active status for brand Xiaomi', () => {
@@ -33,6 +33,7 @@ context('Brand page tests', () => {
             .should($brand => {
                 const brandSelected = ($brand.text()).toLowerCase()
                 expect(brand).to.be.equal(brandSelected)
+
             })
             .then($brand => ($brand.text()))
 

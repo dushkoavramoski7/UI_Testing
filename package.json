@@ -46,7 +46,8 @@
   },
   "devDependencies": {
     "@testing-library/cypress": "^8.0.3",
-    "cypress": "^10.8.0"
+    "cypress": "^10.8.0",
+    "cypress-file-upload": "^5.0.8"
   },
   "browserslist": {
     "production": [

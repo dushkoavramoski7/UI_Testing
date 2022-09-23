@@ -56,7 +56,7 @@ function SnackbarAlert({snackbarStatus, closeSnackbar, snackbarMessage}) {
                         Items added:
                         {snackbarMessage.newData.length === 0 ? <b> No new items added!</b> :
                             snackbarMessage.newData.map((newItem) => (
-                                <div style={{textIndent: '7px'}}><i className="fa fa-arrow-right fa-sm" aria-hidden="true"></i> Name: <b>{newItem}</b></div>
+                                <div style={{textIndent: '7px'}} data-test={"itemAdded"}><i className="fa fa-arrow-right fa-sm" aria-hidden="true"></i> Name: <b>{newItem}</b></div>
                             ))
                         }
                     </Alert>

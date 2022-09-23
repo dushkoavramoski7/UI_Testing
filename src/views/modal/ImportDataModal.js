@@ -46,6 +46,7 @@ function ImportDataModal({show, closeImportModal, upload, excelTemplateFile}) {
             backdrop="static"
             keyboard={false}
             centered={false}
+            data-test = {"importModal"}
         >
             <Modal.Header>
                 <div className='container'>
@@ -64,7 +65,7 @@ function ImportDataModal({show, closeImportModal, upload, excelTemplateFile}) {
                 </a>
             </Modal.Header>
                 <Modal.Body className={`${classes.modalBodyBgColor}`}>
-                    <a href={excelTemplateFile} download>
+                    <a href={excelTemplateFile} download data-test={"downloadBrandExcel"}>
                             <button className="btn btn-primary  dim float-right" type="button" style={{textTransform: 'none'}}><i className="fa fa-download"/></button>
                     </a>
                     <b>Follow these steps:</b>

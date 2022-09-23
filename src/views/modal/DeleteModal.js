@@ -24,6 +24,7 @@ function DeleteModal({show, closeDeleteDialog, deleteItem, itemToBeDeleted}) {
             backdrop="static"
             keyboard={false}
             centered={false}
+            data-test={"deleteModal"}
         >
             <Modal.Header>
                 <div className='container'>

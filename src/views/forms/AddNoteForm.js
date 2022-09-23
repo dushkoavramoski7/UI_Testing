@@ -36,7 +36,10 @@ function AddNoteForm({showNoteForm, brand}) {
     }
 
     const disableSubmitButton = (formik) => {
-        return formik.touched.noteText && Boolean(formik.errors?.noteText)
+        if(formik.values.noteText === ""){
+            return true;
+        }
+        else return !!((formik.touched.noteText && Boolean(formik.errors.noteText)));
     }
 
     const formik = useFormik({
@@ -83,7 +86,8 @@ function AddNoteForm({showNoteForm, brand}) {
                         <FormLabel id="demo-controlled-radio-buttons-group">Note Priority</FormLabel>
                         <RadioGroup id="notePriority" name="notePriority" onChange={formik.handleChange} defaultValue={"LOW"} >
                             <div className={'row ml-1 d-flex justify-content-around'}>
-                                <FormControlLabel control={<Radio sx={{
+                                <FormControlLabel
+                                    control={<Radio sx={{
                                     color: 'grey',
                                     '&.Mui-checked': {
                                         color: 'rgb(26,179,148)',
@@ -93,7 +97,7 @@ function AddNoteForm({showNoteForm, brand}) {
                                     },
                                 }} size={'small'}
                                    checked={formik.values.notePriority === 'LOW'}/>}
-                                   value={"LOW"} label={"Low"}/>
+                                   value={"LOW"} label={"Low"} data-test={"LOW"}/>
 
                                 <FormControlLabel control={
                                     <Radio sx={{
@@ -106,7 +110,7 @@ function AddNoteForm({showNoteForm, brand}) {
                                     },
                                     }} size={'small'}
                                     checked={formik.values.notePriority === 'MEDIUM'}/>}
-                                    value={"MEDIUM"} label={"Medium"}/>
+                                    value={"MEDIUM"} label={"Medium"} data-test={"MEDIUM"}/>
 
                                 <FormControlLabel control={<Radio sx={{
                                     color: 'grey',
@@ -118,12 +122,15 @@ function AddNoteForm({showNoteForm, brand}) {
                                     },
                                 }} size={'small'}
                                 checked={formik.values.notePriority === 'HIGH'}/>}
-                                value={"HIGH"} label={"High"}/></div>
+                                value={"HIGH"} label={"High"} data-test={"HIGH"}/>
+                            </div>
                         </RadioGroup>
                     </div>
                     <button type="submit" className="btn btn-primary btn-block"
                             hidden={loading}
-                            disabled={disableSubmitButton(formik)}>
+                            disabled={disableSubmitButton(formik)}
+                            data-test={"submit-note"}
+                    >
                         Submit
                     </button>
                     <div className="d-flex justify-content-center mt-1" >
