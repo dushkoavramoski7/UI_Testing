@@ -37,12 +37,4 @@ test('test to check if add button is enabled, has name NEW and it is clickable',
     const addButton = screen.getByRole('link', {name: /new/i})
     expect(await addButton).toBeEnabled()
     expect(await addButton).toHaveTextContent("NEW")
-    fireEvent.click(await addButton);
 })
-
-
-
-
-
-
-

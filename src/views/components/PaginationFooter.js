@@ -4,26 +4,26 @@ function PaginationFooter({itemsPerPage, itemOffset, setItemOffset, endOffset, s
 
     const handlePageClick = (event: React.ChangeEvent<unknown>, value: number) => {
         setPage(value - 1);
-        const newOffset = (((value - 1) * itemsPerPage) % arrObjects.length);
+        const newOffset = (((value - 1) * itemsPerPage) % arrObjects?.length);
         const endOffset = newOffset + itemsPerPage;
         setItemOffset(newOffset);
         setEndOffset(endOffset);
     };
 
     const countPages = () => {
-        return Math.ceil(arrObjects.length / itemsPerPage)
+        return Math.ceil(arrObjects?.length / itemsPerPage)
     }
 
     return (
         <div className='col'>
             <div className='row '>
                 <div className='col-5 d-flex justify-content-start'  style={{marginLeft: '-10px'}}>
-                    {arrObjects.length === 0 ?
+                    {arrObjects?.length === 0 ?
                     <span>
                         No entities found
                     </span> :
                     <span>
-                        {itemOffset + 1} - {endOffset > arrObjects.length ? arrObjects.length : endOffset} of {arrObjects.length} entities
+                        {itemOffset + 1} - {endOffset > arrObjects?.length ? arrObjects?.length : endOffset} of {arrObjects?.length} entities
                     </span>}
                 </div>
                 <div className='col-7 d-flex justify-content-end'>
