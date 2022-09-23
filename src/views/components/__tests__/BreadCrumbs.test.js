@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import BreadCrumbs from '../BreadCrumbs';
-import { render, screen } from '@testing-library/react';
+import {cleanup, render, screen} from '@testing-library/react';
 import '@testing-library/jest-dom';
 
+afterEach(cleanup);
 
 it('renders without crashing', ()=>{
     const div = document.createElement('div');

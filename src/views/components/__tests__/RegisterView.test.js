@@ -7,6 +7,8 @@ import {BrowserRouter} from "react-router-dom";
 import {Provider} from "react-redux";
 import {store} from "../../../redux/reducers";
 
+afterEach(cleanup);
+
 
 test('this is test for Register View', async ()=>{
     const div = document.createElement('div');

@@ -79,13 +79,13 @@ function DetailsBrandSideBar() {
                             <div style={brand.notes?.length !== 0 ? brand.notes?.length > 4 ? {height: '457px'} : {overflow: 'hidden', height: '1%'} : {display: 'none'}}>
                                 <ul className={"full-height-scroll sortable-list connectList agile-list" } id="todo" hidden={brand.notes?.length <= 4}>
                                     {brand.notes && sortNotesByDateCreated(brand.notes).map((note) => (
-                                        <li className={note.notePriority === 'HIGH' ? "warning-element" :
-                                            note.notePriority === 'MEDIUM' ? "info-element" :
-                                                note.notePriority === 'LOW' ? "success-element" : ""}
+                                        <li className={note?.notePriority === 'HIGH' ? "warning-element" :
+                                            note?.notePriority === 'MEDIUM' ? "info-element" :
+                                                note?.notePriority === 'LOW' ? "success-element" : ""}
                                             style={{  position: 'relative'}}
                                             id="task1"
                                             key={note.noteId}>
-                                            <div style={{width: '67%'}}>{note.noteText}</div>
+                                            <div style={{width: '67%'}}>{note?.noteText}</div>
                                             <span
                                                 className="card-subtitle mb-2 text-muted">Priority: {note.notePriority}
                                             </span>
@@ -106,7 +106,7 @@ function DetailsBrandSideBar() {
                                                 <i className="fa fa-clock-o"/>
                                                 <span>  </span>
                                                 <span>
-                                                    {note.formattedNoteDateCreated}
+                                                    {note?.formattedNoteDateCreated}
                                                 </span>
                                             </div>
                                         </li>
@@ -114,34 +114,34 @@ function DetailsBrandSideBar() {
                                 </ul>
                                 <ul className={"sortable-list connectList agile-list" } id="todo1" hidden={brand.notes?.length > 4}>
                                     {brand.notes && sortNotesByDateCreated(brand.notes).map((note) => (
-                                        <li className={note.notePriority === 'HIGH' ? "warning-element" :
-                                            note.notePriority === 'MEDIUM' ? "info-element" :
-                                                note.notePriority === 'LOW' ? "success-element" : ""}
+                                        <li className={note?.notePriority === 'HIGH' ? "warning-element" :
+                                            note?.notePriority === 'MEDIUM' ? "info-element" :
+                                                note?.notePriority === 'LOW' ? "success-element" : ""}
                                             style={{  position: 'relative'}}
                                             id="task1"
-                                            key={note.noteId}>
-                                            <div style={{width: '67%'}}>{note.noteText}</div>
+                                            key={note?.noteId}>
+                                            <div style={{width: '67%'}}>{note?.noteText}</div>
                                             <span
-                                                className="card-subtitle mb-2 text-muted">Priority: {note.notePriority}
+                                                className="card-subtitle mb-2 text-muted">Priority: {note?.notePriority}
                                             </span>
                                             <div className="agile-detail">
                                                 <span
-                                                    className={note.noteStatus === 'DONE' ?  "float-right label label-primary" : "float-right label"}
+                                                    className={note?.noteStatus === 'DONE' ?  "float-right label label-primary" : "float-right label"}
                                                     style={{ position: 'absolute', top: '7px', right: '8px'}}
-                                                    onClick={() => changeStatus(note, brand.brandId)}
+                                                    onClick={() => changeStatus(note, brand?.brandId)}
                                                 >
-                                                    {note.formattedNoteStatus}
+                                                    {note?.formattedNoteStatus}
                                                 </span>
                                                 <a  style={{color: '#C41E3A', position: 'absolute', bottom: '3px', right: '8px' }} type="button" className="close">
                                                     <IconButton size={'small'} style={{color: '#C41E3A'}}>
                                                         <CloseIcon fontSize={'small'}
-                                                                   onClick={() => deleteNote(note.noteId, brand.brandId)}/>
+                                                                   onClick={() => deleteNote(note?.noteId, brand.brandId)}/>
                                                     </IconButton>
                                                 </a>
                                                 <i className="fa fa-clock-o"/>
                                                 <span>  </span>
                                                 <span>
-                                                    {note.formattedNoteDateCreated}
+                                                    {note?.formattedNoteDateCreated}
                                                 </span>
                                             </div>
                                         </li>
