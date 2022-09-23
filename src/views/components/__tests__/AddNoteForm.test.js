@@ -20,7 +20,7 @@ test('Test to check if submit button is enabled/disabled', async ()=>{
     const submitButton = screen.getByText("Submit")
 
     expect(await submitButton).toBeInTheDocument()
-    expect(await submitButton).toBeEnabled()
+    expect(await submitButton).toBeDisabled()
     expect(await submitButton).toHaveTextContent("Submit")
     fireEvent.click(await submitButton)
 })
