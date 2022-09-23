@@ -1,13 +1,13 @@
 export const addBrandFormStyle = (theme) => {
     return {
         inputField: {
-            ...theme.common.inputField
+            ...theme.common?.inputField
         },
         modalBodyBgColor: {
-            ...theme.common.modalBodyBgColor
+            ...theme.common?.modalBodyBgColor
         },
         errorText: {
-            ...theme.common.errorText
+            ...theme.common?.errorText
         },
     }
 };

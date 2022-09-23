@@ -153,7 +153,7 @@ function AddBrandForm() {
                                             <div className={'col-6'}>
                                                 <TextField id="brandName"
                                                            name="brandName"
-                                                           className={classes?.inputField}
+                                                           className={classes.inputField}
                                                            label="Name *"
                                                            value={formik.values.brandName}
                                                            onBlur={formik.handleBlur}
@@ -171,7 +171,7 @@ function AddBrandForm() {
                                             <div className={'col-6'}>
                                                 <TextField id="brandManufacturer"
                                                            name="brandManufacturer"
-                                                           className={classes?.inputField}
+                                                           className={classes.inputField}
                                                            label="Manufacturer *"
                                                            value={formik.values.brandManufacturer}
                                                            onBlur={formik.handleBlur}
@@ -190,7 +190,7 @@ function AddBrandForm() {
                                             <div className="col">
                                                 <TextField id="brandDescription"
                                                            name="brandDescription"
-                                                           className={classes?.inputField}
+                                                           className={classes.inputField}
                                                            label="Description"
                                                            value={formik.values.brandDescription}
                                                            onBlur={formik.handleBlur}
@@ -204,7 +204,7 @@ function AddBrandForm() {
                                                 <div>
                                                     {formik.touched.brandDescription && Boolean(formik.errors.brandDescription) ? (
                                                         <span className={`${classes.errorText}`} style={{float: 'left'}}>{formik.errors.brandDescription}</span>): null }
-                                                    <span style={{float: 'right'}}>{formik.values.brandDescription?.length}/{lengthInput}</span>
+                                                    <span data-testid='countingLetters' style={{float: 'right'}}>{formik.values.brandDescription?.length}/{lengthInput}</span>
                                                 </div>
                                             </div>
                                         </div>
