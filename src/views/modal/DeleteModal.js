@@ -43,8 +43,8 @@ function DeleteModal({show, closeDeleteDialog, deleteItem, itemToBeDeleted}) {
             <Modal.Body className={`${classes.modalBodyBgColor}`}>
                     <p className="text-center" style={{fontSize: '16px', marginBottom: '-12px'}}>Do you really want to delete this item:
                         <ul className={'text-center list-unstyled'}>
-                            {itemToBeDeleted.map((item) => (
-                                <li key={item}>{item.split(":")[0]}: <span className="font-weight-bold">{item.split(":")[1]}</span> {itemToBeDeleted.indexOf(item) === itemToBeDeleted.length-1 ? '?' : null}</li>
+                            {itemToBeDeleted?.map((item) => (
+                                <li key={item}>{item.split(":")[0]}: <span className="font-weight-bold">{item.split(":")[1]}</span> {itemToBeDeleted?.indexOf(item) === itemToBeDeleted?.length-1 ? '?' : null}</li>
                             ))}
                         </ul>
                    </p>

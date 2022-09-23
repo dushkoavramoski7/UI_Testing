@@ -36,7 +36,7 @@ function AddNoteForm({showNoteForm, brand}) {
     }
 
     const disableSubmitButton = (formik) => {
-        return formik.touched.noteText && Boolean(formik.errors.noteText)
+        return formik.touched.noteText && Boolean(formik.errors?.noteText)
     }
 
     const formik = useFormik({
@@ -67,14 +67,14 @@ function AddNoteForm({showNoteForm, brand}) {
                                        value={formik.values.noteText}
                                        onBlur={formik.handleBlur}
                                        onChange={formik.handleChange}
-                                       error={formik.touched.noteText && Boolean(formik.errors.noteText)}
+                                       error={formik.touched.noteText && Boolean(formik.errors?.noteText)}
                                        fullWidth={true}
                                        spellCheck={false}
                                        multiline
                                        rows={4}/>
                         <div>
-                        {formik.touched.noteText && Boolean(formik.errors.noteText) ? (
-                            <span className={`${classes.errorText}`} style={{float: 'left'}}>{formik.errors.noteText}</span>
+                        {formik.touched.noteText && Boolean(formik.errors?.noteText) ? (
+                            <span className={`${classes.errorText}`} style={{float: 'left'}}>{formik.errors?.noteText}</span>
                         ) : null}
                             <span style={{float: 'right'}}>{formik.values.noteText.length}/{lengthTextNoteInput}</span>
                         </div>

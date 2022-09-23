@@ -17,14 +17,14 @@ function SnackbarAlert({snackbarStatus, closeSnackbar, snackbarMessage}) {
                     vertical: "top",
                     horizontal: "right"
                 }}
-                autoHideDuration={snackbarMessage.importFile === true ? 20000 : 6512}
+                autoHideDuration={snackbarMessage?.importFile === true ? 20000 : 6512}
                 open={snackbarStatus}
                 onClose={closeSnackbar}
                 transitionDuration={{enter: 500, exit: 500}}
                 TransitionComponent={TransitionRight}
             >
                 <Alert severity={snackbarMessage.status} sx={{width: '100%', position: 'relative'}}>
-                    <b>{snackbarMessage.message}</b> <br/>
+                    <b data-testid={'snackbarMessage'}>{snackbarMessage.message}</b> <br/>
                     {snackbarMessage.subMessage}
                     <a style={snackbarMessage.status === 'success' ? {
                             color: '#043927 ',
@@ -42,7 +42,7 @@ function SnackbarAlert({snackbarStatus, closeSnackbar, snackbarMessage}) {
                     </a>
                 </Alert>
             </Snackbar>
-            {snackbarMessage.importFile === true ? (
+            {snackbarMessage?.importFile === true ? (
                 <Snackbar
                     anchorOrigin={{
                         vertical: "top",

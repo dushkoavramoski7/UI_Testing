@@ -10,6 +10,9 @@ import BreadCrumbs from "../BreadCrumbs";
 import {Provider} from "react-redux";
 import {store} from "../../../redux/reducers";
 
+afterEach(cleanup);
+
+
 it('Login view renders without crashing', ()=>{
     const div = document.createElement('div');
     ReactDOM.render(<Provider store={store}><BrowserRouter><LoginView/></BrowserRouter></Provider>,div)
