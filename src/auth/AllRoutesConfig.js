@@ -15,6 +15,12 @@ export const routesConfig = [
     },
     {
         component: LoginView,
+        path: '/',
+        title: 'Login',
+        exact: true
+    },
+    {
+        component: LoginView,
         path: '/logout',
         title: 'Logout',
         exact: true

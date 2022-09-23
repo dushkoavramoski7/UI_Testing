@@ -265,7 +265,7 @@ function BrandView() {
                 <TopBar/>
                 <BreadCrumbs breadCrumbsItems={breadCrumbsItems} breadCrumbsActive={'Brand'}/>
 
-                <div className="wrapper wrapper-content animated fadeInRight">
+                <div className="wrapper wrapper-content animated fadeInRight" data-test={"brandView"}>
                     <div className="row">
                         <div className="col-sm-8">
                             <div className="ibox">
@@ -316,10 +316,11 @@ function BrandView() {
                                                                         onClick={() => selectBrand(brand)}
                                                                         className={`gradeX gradeA gradeC client-link ${classes.greyHover}`}>
                                                                         <td>{(page * itemsPerPage) + i + 1}</td>
-                                                                        <td>{brand.brandName}</td>
+                                                                        <td data-test={"brandName"}>{brand.brandName}</td>
                                                                         <td>{brand.brandManufacturer}</td>
                                                                         <td>
                                                                             <Checkbox size="small"
+                                                                                      data-test={"checkbox"}
                                                                                       onClick={() => changeActiveFlagHandler(brand)}
                                                                                       checked={brand.brandActiveFlag === 1}
                                                                                       className={'text-center align-self-center'}

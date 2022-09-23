@@ -2,7 +2,7 @@ import Profile_Image from '../../images/profile_small.jpg'
 import {Link} from "react-router-dom";
 function SideBar() {
     return (
-        <nav className="navbar-default navbar-static-side" role="navigation">
+        <nav className="navbar-default navbar-static-side" role="navigation" data-test={"navbarView"}>
         <div className="sidebar-collapse">
             <ul className="nav metismenu" id="side-menu">
                 <li className="nav-header">

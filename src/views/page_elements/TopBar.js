@@ -6,7 +6,7 @@ function TopBar() {
             <div className="row border-bottom">
                 <nav className="navbar navbar-static-top" role="navigation" style={{marginBottom: "0px"}}>
                     <div className="navbar-header">
-                        <a className="navbar-minimalize minimalize-styl-2 btn btn-primary" href="#">
+                        <a className="navbar-minimalize minimalize-styl-2 btn btn-primary" href="#" data-test={"navbarButton"}>
                             <i className="fa fa-bars"/> </a>
                         <form role="search" className="navbar-form-custom">
                             <div className="form-group">

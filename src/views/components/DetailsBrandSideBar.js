@@ -31,7 +31,7 @@ function DetailsBrandSideBar() {
                 <div className="tab-pane">
                     <div className="row m-b-md">
                         <div className="col-lg-12 text-left">
-                            <h2 style={{textAlign: 'justify'}}>{brand.brandName}</h2>
+                            <h2 style={{textAlign: 'justify'}} data-test={"selectedBrandName"}>{brand.brandName}</h2>
                             <strong>
                                 About the brand
                             </strong>

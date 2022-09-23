@@ -51,7 +51,7 @@ function LoginView() {
 
     return (
         <>
-            <div className="loginColumns animated fadeInDown bg-light mt-5" style={{padding: '15px 30px 30px 30px', borderRadius: '15px'}}>
+            <div className="loginColumns animated fadeInDown bg-light mt-5" style={{padding: '15px 30px 30px 30px', borderRadius: '15px'}} data-test={window.location.pathname === '/logout' ? "logoutView" :window.location.pathname === '/login' ? "loginView" : ""}>
                 {user !== '' ? <div className={'text-center font-weight-bold p-2'} style={{color: 'rgba(26,179,148)', backgroundColor:'rgba(26,179,148, .2)'}}><i
                     className="fa fa-check" aria-hidden="true"></i> User created! <br/> Use same credentials to login. </div> : ''}
                 {window.location.pathname === '/logout' ? <div className={'text-center font-weight-bold p-2'} style={{color: 'rgba(26,179,148)', backgroundColor:'rgba(26,179,148, .2)'}}><i
@@ -59,7 +59,7 @@ function LoginView() {
 
                 <div className="row p-2" style={{paddingTop: '0px'}}>
 
-                    <div className="col-md-6 text-justify">
+                    <div className="col-md-6 text-justify mt-2">
                         <h2 className="font-bold">Welcome to 'Sample app'</h2>
 
                         <p>
@@ -85,7 +85,7 @@ function LoginView() {
                         <div className="ibox-content">
                             <FormikProvider value={formik}>
                                 <form onSubmit={formik.handleSubmit}>
-                                        <div className="form-group">
+                                        <div className="form-group mt-3">
                                             <TextField id="username"
                                                        name="username"
                                                        className={classes.inputField}
@@ -121,6 +121,9 @@ function LoginView() {
                                                 {formik.touched.password && Boolean(formik.errors.password) ? (
                                                     <span className={`${classes.errorText}`}>{formik.errors.password}</span>): null }
                                             </div>
+                                        </div>
+                                        <div className="form-group">
+                                            <div className="checkbox i-checks"><label data-testid='checkboxInput'> <input type="checkbox"/><i></i> Remember me </label></div>
                                         </div>
                                         <button type="submit" className="btn btn-primary block full-width m-b" disabled={disableLoginButton(formik)}>Login</button>
 
