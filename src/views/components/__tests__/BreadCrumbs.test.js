@@ -18,15 +18,14 @@ test('Is active brand working properly', ()=>{
 })
 
 test('BreadCrumb props works properly', ()=>{
-    render(<BreadCrumbs breadCrumbsItems=
-    {[{name: 'Home', href: '/home'}, {name: 'Tables', href: '/tables'}]} breadCrumbsActive={'Brand'}/>);
+    render(<BreadCrumbs breadCrumbsItems={[{name: 'Home', href: '/home'}, {name: 'Tables', href: '/tables'}]} breadCrumbsActive={'Brand'}/>);
     const items = screen.getAllByRole('listitem');
     const breadCrombsItems = items.map(item => item.textContent)
     expect(breadCrombsItems).toMatchInlineSnapshot(`
       Array [
         "Home",
         "Tables",
-        "Brand",=
+        "Brand",
       ]
     `)
 })
