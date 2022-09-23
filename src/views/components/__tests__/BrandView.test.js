@@ -5,15 +5,21 @@ import {BrowserRouter} from "react-router-dom";
 import BrandView from "../../BrandView";
 import React from "react";
 import {fireEvent, render, screen} from "@testing-library/react";
-import LoginView from "../../LoginView";
+import PopoverFiler from "../PopoverFilter";
+import FilterChipBrandIndicators from '../FilterChipBrandIndicators'
 
 
-test('Test to check if sasd', async ()=>{
+test('Brand view renders without error', async ()=>{
     const div = document.createElement('div');
     ReactDOM.render(<Provider store={store}><BrowserRouter><BrandView/></BrowserRouter></Provider>,div)
 })
 
-test('Test while username input has text and password is empty (button should be disabled) ', async ()=>{
-    render(<Provider store={store}><BrowserRouter><BrandView/></BrowserRouter></Provider>)
-    screen.getByRole('')
+test('Popover filer renders without error', async ()=>{
+    const div = document.createElement('div');
+    ReactDOM.render(<Provider store={store}><BrowserRouter><PopoverFiler/></BrowserRouter></Provider>,div)
+})
+
+test('Filter Chip Brand Indicators component renders without error', async ()=>{
+    const div = document.createElement('div');
+    ReactDOM.render(<Provider store={store}><BrowserRouter><FilterChipBrandIndicators/></BrowserRouter></Provider>,div)
 })
