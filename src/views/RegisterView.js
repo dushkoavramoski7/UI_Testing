@@ -112,7 +112,7 @@ function RegisterView() {
                             </div>
                         </div>
                         <div className="form-group">
-                            <div className="checkbox i-checks"><label  data-testid='checkboxInput'> <input type="checkbox"/><i></i> Agree the terms
+                            <div className="checkbox i-checks"><label > <input data-testid='checkboxInput' type="checkbox"/><i></i> Agree the terms
                                 and policy </label></div>
                         </div>
                         <button type="submit" className="btn btn-primary block full-width m-b" disabled={disableRegisterButton(formik)}>Register</button>

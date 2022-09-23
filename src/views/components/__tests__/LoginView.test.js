@@ -67,18 +67,12 @@ test('Test while password input has text and username is empty (button should be
 })
 
 
-// test('Test if error message works properly) ', async ()=>{
-//     render(<Provider store={store}><BrowserRouter><LoginView/></BrowserRouter></Provider>)
-//     const usernameInput = screen.getByRole('textbox', {
-//         name: /username/i
-//     })
-//     const paswordInput = screen.getByLabelText(/password/i)
-//     expect(await usernameInput).toBeInTheDocument()
-//     expect(await paswordInput).toBeInTheDocument()
-//     fireEvent.click(usernameInput)
-//     fireEvent.change(usernameInput, {'target': {'value':""}})
-//     fireEvent.click(paswordInput)
-//     expect().
-// })
-//class="MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputSizeSmall css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input"
-//class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+test('Test if Create Account button and forget password are enabled and are present in the document) ', async ()=>{
+    render(<Provider store={store}><BrowserRouter><LoginView/></BrowserRouter></Provider>)
+    const createAccountButton = screen.getByRole('link', {  name: /create an account/i})
+    const forgotPassword = screen.getByText(/forgot password\?/i)
+    expect(await createAccountButton).toBeInTheDocument()
+    expect(await forgotPassword).toBeInTheDocument()
+    expect(createAccountButton).toBeEnabled()
+    expect(forgotPassword).toBeEnabled()
+})
