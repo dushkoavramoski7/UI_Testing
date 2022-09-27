@@ -66,7 +66,7 @@ context('Import brand tests', () => {
             .should("not.be.disabled")
             .click()
 
-        cy.wait(10000)
+        cy.wait(15000)
 
         //search brand Heineken
         cy.findByRole('textbox')

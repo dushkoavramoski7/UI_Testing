@@ -146,7 +146,7 @@ context('Notes tests', () => {
                 expect(Number(date[2])).to.be.equal(dateTime.getUTCDate())
 
                 let time = $noteCreatedAt[0].innerText.split(" ")[1].split(":").slice(0, -1);
-                expect(time[0]).to.be.equal(dateTime.getHours().toString())
+                expect(Number(time[0])).to.be.equal(dateTime.getHours())
                 expect(Number(time[1])).to.be.equal(dateTime.getMinutes())
                 }
             )
